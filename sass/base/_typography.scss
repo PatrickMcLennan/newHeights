@@ -1,0 +1,147 @@
+body > * {
+    font-family: 'Lato';
+}
+
+// LANDING
+.landing__logo {
+    font-size: 10rem;
+}
+.landing__header {
+
+    &__heading {
+        @include Lato100;
+        font-size: 5rem;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+
+        &-secondary {
+            @include Lato300;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            font-style: italic;
+            color: rgba($color-black, .75);
+        }
+    }
+}
+
+// ABOUT US
+
+.aboutUs {
+
+    &__header {
+        text-align: right;
+
+        & .logo {
+            letter-spacing: -1.75rem;
+        }
+
+        @include respond(tab-land) {
+            font-size: 6rem;
+        }
+    }
+}
+
+// ABOUT US CARDS
+
+.card {
+    h5 {
+        font-size: 2.5rem;
+        @include Lato100;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+    p {
+        @include Lato300;
+        font-size: 1.75rem;
+        letter-spacing: .45rem;
+        line-height: 150%;
+
+        &::first-letter {
+            margin-left: 3rem;
+        }
+    }
+}
+
+// TOURS
+.tours {
+
+    & li {
+        text-align: center;
+    }
+    &__list-name {
+        font-size: 3rem;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
+        @include Lato100;
+    }
+    &__list-arrow {
+        font-size: 5rem;
+        font-weight: 100;
+    }
+    &__list-guide {
+        font-size: 1.5rem;
+        letter-spacing: .5rem;
+        text-transform: uppercase;
+        @include Lato300;
+    }
+
+    &__name-header {
+        font-size: 3.5rem;
+        @include Lato100;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+    }
+    &__name-date {
+        align-self: flex-start;
+        font-size: 2.5rem;
+        @include Lato300;
+        letter-spacing: .5rem;
+        font-style: italic;
+        text-transform: uppercase;
+        margin-left: 3rem;
+    }
+    &__stats h6{
+        font-size: 1.5rem;
+        @include Lato300;
+        letter-spacing: .25rem;
+        text-transform: uppercase;
+
+        & span {
+            font-weight: bold;
+        }
+    }
+    &__ramble blockquote {
+        font-size: 2rem;
+        @include Lato300;
+        letter-spacing: .25rem;
+        line-height: 120%;
+        font-style: italic;
+
+    }
+    &__ramble p {
+        line-height: 120%;
+        letter-spacing: .25rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-style: italic;
+        @include Lato100;
+        text-align: right;
+    }
+    &__destinations-box h6 {
+        @include Lato300;
+        font-size: 2rem;
+    }
+    &__meetGuide h5 {
+        @include Lato100;
+        text-transform: uppercase;
+        font-size: 2.3rem;
+    }
+    &__meetGuide figcaption {
+        @include Lato300;
+        font-size: 1.75rem;
+        letter-spacing: .25rem;
+    }
+}

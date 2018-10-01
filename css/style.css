@@ -1,0 +1,487 @@
+/*
+
+        BIG MEDIA QUERIES ALWAYS GO FIRST FOR "DESKTOP-FIRST", SMALL MEDIA QUERIES FIRST FOR "MOBILE
+        -FIRST" 
+        their styles apply to ALL sizes smaller or bigger (depending on "min/max")
+         as well, so specificity is needed to select the most relevant selector 
+         placed LAST in applicable code.
+
+0 - 600px:     PHONE
+600 - 900px:   TABLET (PORTRAIT)
+900 - 1200px:  TABLET (LANDSCAPE)
+1200 - 1800px: DESKTOP (this is where normal "desktop-first" styles apply)
+1800px+:       BIG DESKTOP
+
+$BREAKPOINT ARGUMENT CHOICES:
+ - phone
+ - tab-port
+ - tab-land
+ - big-desktop
+
+ ORDER: base + typography,   general layout + grid, page layout, components
+
+ 1em = 16px 
+
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  padding: 1vh 1vw;
+  scroll-behavior: smooth; }
+  @media only screen and (max-width: 75em) {
+    html {
+      padding: 0; } }
+
+button,
+button:active,
+button:focus {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer; }
+
+body > * {
+  font-family: 'Lato'; }
+
+.landing__logo {
+  font-size: 10rem; }
+
+.landing__header__heading {
+  font-family: 'Lato';
+  font-weight: 100;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem; }
+  .landing__header__heading-secondary {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.75); }
+
+.aboutUs__header {
+  text-align: right; }
+  .aboutUs__header .logo {
+    letter-spacing: -1.75rem; }
+  @media only screen and (max-width: 75em) {
+    .aboutUs__header {
+      font-size: 6rem; } }
+
+.card h5 {
+  font-size: 2.5rem;
+  font-family: 'Lato';
+  font-weight: 100;
+  font-style: italic;
+  text-transform: uppercase; }
+
+.card p {
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: .45rem;
+  line-height: 150%; }
+  .card p::first-letter {
+    margin-left: 3rem; }
+
+.tours li {
+  text-align: center; }
+
+.tours__list-name {
+  font-size: 3rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  font-family: 'Lato';
+  font-weight: 100; }
+
+.tours__list-arrow {
+  font-size: 5rem;
+  font-weight: 100; }
+
+.tours__list-guide {
+  font-size: 1.5rem;
+  letter-spacing: .5rem;
+  text-transform: uppercase;
+  font-family: 'Lato';
+  font-weight: 300; }
+
+.tours__name-header {
+  font-size: 3.5rem;
+  font-family: 'Lato';
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem; }
+
+.tours__name-date {
+  align-self: flex-start;
+  font-size: 2.5rem;
+  font-family: 'Lato';
+  font-weight: 300;
+  letter-spacing: .5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-left: 3rem; }
+
+.tours__stats h6 {
+  font-size: 1.5rem;
+  font-family: 'Lato';
+  font-weight: 300;
+  letter-spacing: .25rem;
+  text-transform: uppercase; }
+  .tours__stats h6 span {
+    font-weight: bold; }
+
+.tours__ramble blockquote {
+  font-size: 2rem;
+  font-family: 'Lato';
+  font-weight: 300;
+  letter-spacing: .25rem;
+  line-height: 120%;
+  font-style: italic; }
+
+.tours__ramble p {
+  line-height: 120%;
+  letter-spacing: .25rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: 'Lato';
+  font-weight: 100;
+  text-align: right; }
+
+.tours__destinations-box h6 {
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 2rem; }
+
+.tours__meetGuide h5 {
+  font-family: 'Lato';
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 2.3rem; }
+
+.tours__meetGuide figcaption {
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 1.75rem;
+  letter-spacing: .25rem; }
+
+.section__header {
+  font-size: 7rem;
+  font-family: 'Lato';
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 5vh; }
+
+.logo {
+  font-family: 'Lato';
+  font-weight: 100;
+  letter-spacing: -2.5rem; }
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  @media only screen and (max-width: 56.25em) {
+    .card {
+      flex-direction: column;
+      align-items: flex-start; } }
+  .card img {
+    height: 100%;
+    width: 33%;
+    border: 1px solid #000;
+    border-radius: 1%;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+    object-fit: center; }
+    @media only screen and (max-width: 56.25em) {
+      .card img {
+        height: 33%;
+        width: 100%; } }
+  .card figcaption {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; }
+    @media only screen and (max-width: 56.25em) {
+      .card figcaption {
+        padding: 5.5rem 3rem 3rem 3rem; } }
+    .card figcaption span {
+      height: 1px;
+      width: 20%;
+      background: #000;
+      margin: 2rem 0; }
+
+.card:nth-child(odd) {
+  flex-direction: row-reverse; }
+  @media only screen and (max-width: 56.25em) {
+    .card:nth-child(odd) {
+      flex-direction: column; } }
+
+.card:not(:last-child) {
+  margin-bottom: 2.5rem; }
+
+.aboutUs {
+  display: flex;
+  flex-direction: column; }
+  .aboutUs__header {
+    margin: 5vh; }
+    @media only screen and (max-width: 75em) {
+      .aboutUs__header {
+        margin-right: 6vw; } }
+
+.nav__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 100%;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+  height: 6.25rem;
+  width: 6.25rem;
+  padding: .5rem;
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  transition: all .3s;
+  cursor: pointer;
+  background: #fff;
+  z-index: 9999; }
+  .nav__logo span {
+    height: 1px;
+    width: 50%;
+    background: #000; }
+  .nav__logo:hover {
+    transform: scale(1.05);
+    padding: .25rem; }
+  .nav__logo:active {
+    transform: scale(0.95);
+    padding: .75rem;
+    outline: none; }
+
+.landing {
+  display: flex;
+  flex-direction: column; }
+  .landing__logo {
+    margin-left: 5rem; }
+  .landing__grid {
+    display: grid;
+    max-width: 100%;
+    grid-template: repeat(3, 27.5vh)/repeat(3, 1fr);
+    position: relative; }
+    .landing__grid__photo:nth-child(1) {
+      transform: translate(3rem, 1rem);
+      width: calc(100% + 3rem); }
+    .landing__grid__photo:nth-child(2) {
+      transform: translateY(3rem);
+      width: calc(100% + 3rem); }
+    .landing__grid__photo:nth-child(3) {
+      height: calc(100% + 5rem); }
+    .landing__grid__photo:nth-child(4) {
+      height: calc(120% + 5rem);
+      transform: translateY(-2rem); }
+    .landing__grid__photo:nth-child(5) {
+      width: 125%;
+      height: 120%; }
+    .landing__grid__photo:nth-child(6) {
+      margin-left: 3rem;
+      margin-top: 3rem; }
+    .landing__grid__photo:nth-child(7) {
+      margin: 2rem;
+      transform: translateY(2rem); }
+    .landing__grid__photo:nth-child(8) {
+      transform: translate(-3rem, 1rem); }
+    .landing__grid__photo:nth-child(9) {
+      transform: translateX(-25%);
+      width: 125%; }
+    .landing__grid__photo img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid #000;
+      border-radius: 1%;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4); }
+  .landing__header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 15vh;
+    align-items: center;
+    border: 1px solid black;
+    border: 1%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+    padding: 2.5rem;
+    text-align: center; }
+    @media only screen and (max-width: 56.25em) {
+      .landing__header {
+        top: 35%; } }
+    .landing__header span {
+      height: 1px;
+      width: 50%;
+      background: #000;
+      margin: 2.5rem 0; }
+      @media only screen and (max-width: 56.25em) {
+        .landing__header span {
+          margin: 1rem 0; } }
+  .landing__buttons {
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
+    right: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+    @media only screen and (max-width: 56.25em) {
+      .landing__buttons {
+        bottom: 5%; } }
+    .landing__buttons button {
+      margin: 1rem 0;
+      padding: 1rem 2rem;
+      border: 1px solid #000;
+      background: rgba(255, 255, 255, 0.9);
+      font-family: 'Lato';
+      font-weight: 300;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: .5rem;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4); }
+
+.tours {
+  max-height: 51rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 'tourName tourName tourName tourName tourName' 'list tourPic tourPic destinations destinations' 'list tourPic tourPic ramble ramble' 'list stats stats ramble ramble' 'list stats stats meetGuide meetGuide' 'list stats stats meetGuide meetGuide'; }
+  .tours__list {
+    grid-area: list;
+    height: 100%;
+    padding-bottom: 3rem; }
+    .tours__list ul {
+      height: 100%;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; }
+    .tours__list li {
+      list-style-type: none; }
+    .tours__list-break {
+      height: 1px;
+      width: 80%;
+      background: #000;
+      margin: auto auto; }
+    .tours__list-name {
+      padding-top: 2rem; }
+    .tours__list-guide {
+      padding-bottom: 2rem; }
+  .tours__name {
+    grid-area: tourName;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-left: 20vw; }
+  .tours__pics {
+    grid-area: tourPic;
+    padding: 3rem; }
+    .tours__pics img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid #000;
+      border-radius: 1%;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4); }
+  .tours__stats {
+    grid-area: stats;
+    display: grid;
+    grid-template: repeat(2, 1fr) 2fr/repeat(2, 1fr);
+    justify-items: center;
+    align-items: center; }
+    .tours__stats button {
+      grid-area: 3 / 1 / 4 / 3; }
+  .tours__bookNow {
+    grid-area: bookNow;
+    background: royalblue; }
+  .tours__destinations {
+    grid-area: destinations;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; }
+    .tours__destinations-box {
+      min-width: 25%;
+      min-height: 30%;
+      border: 1px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+  .tours__ramble {
+    grid-area: ramble;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; }
+  .tours__meetGuide {
+    grid-area: meetGuide;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px solid black; }
+    .tours__meetGuide h5 {
+      margin: 2rem 2rem 0 0; }
+    .tours__meetGuide figure {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .tours__meetGuide img {
+      border-radius: 100%;
+      height: 19rem;
+      width: 19rem;
+      object-fit: cover; }
+    .tours__meetGuide figcaption {
+      flex: 1; }
+    .tours__meetGuide span {
+      height: 50%;
+      width: 1px;
+      background: #000;
+      margin: 0 2.5rem; }
+
+.everest__list,
+.loonie__list,
+.island__list,
+.egypt__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .3s; }
+  .everest__list:hover,
+  .loonie__list:hover,
+  .island__list:hover,
+  .egypt__list:hover {
+    transform: scale(1.05); }
+  .everest__list:active > .tours__list-arrow,
+  .loonie__list:active > .tours__list-arrow,
+  .island__list:active > .tours__list-arrow,
+  .egypt__list:active > .tours__list-arrow {
+    transform: scaleX(1.05); }
+
+.hidden {
+  display: none; }

@@ -1,0 +1,11 @@
+.aboutUs {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        margin: 5vh;
+        @include respond(tab-land) {
+            margin-right: 6vw;
+        }
+    }
+}
